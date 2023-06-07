@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -apf --format=none | sort | tr '\n' ','
+ls -ap --format=comma
