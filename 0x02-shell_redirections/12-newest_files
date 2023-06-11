@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lat | tail -n 10
