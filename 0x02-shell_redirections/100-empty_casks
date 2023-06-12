@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -aR | find -empty -execdir sh -c 'printf "%s\n" "${1##*/}"' sh {} \;
+find . -empty -printf "%f\n"
