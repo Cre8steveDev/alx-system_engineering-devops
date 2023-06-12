@@ -1,2 +1,2 @@
 #!/bin/bash
-ls . -a1R | find -empty
+find . -empty -execdir printf '%s\n' {} \; | while IFS= read -r filename; do echo "${filename#./}"; done
