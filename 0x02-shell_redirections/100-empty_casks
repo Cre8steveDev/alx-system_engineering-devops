@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -execdir printf '%s\n' {} \; | while IFS= read -r filename; do echo "${filename#./}"; done
+find . -empty -execdir sh -c 'printf "%s\n" "${1##*/}"' sh {} \;
