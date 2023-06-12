@@ -1,2 +1,2 @@
 #!/bin/bash
-ls . -alR | find -empty | cut -d' ' -f9
+ls . -a1R | find -empty
