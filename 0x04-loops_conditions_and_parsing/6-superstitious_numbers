@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Using While Loop and Case
+
+while [ $((current++)) -ne 20 ]
+do
+	case $current in
+		4)
+		echo $current
+		echo 'bad luck from China'
+		;;
+		9)
+		echo $current
+		echo 'bad luck from Japan'
+		;;
+		17)
+		echo $current
+		echo 'bad luck from Italy'
+		;;
+		*)
+		echo $current
+		;;
+	esac
+done
