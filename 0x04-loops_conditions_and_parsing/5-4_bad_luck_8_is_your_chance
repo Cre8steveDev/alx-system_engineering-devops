@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Task 5 More Loops and conditionals
+
+# In this way of assigning inside the loop;
+#+ the variable starts from 0
+
+while [ $((counter++)) -ne 10 ]
+do
+	if [ $counter -eq 4 ]
+	then echo 'bad luck'
+	elif [ $counter -eq 8 ]
+	then echo 'good luck'
+	else
+		echo 'Best School'
+	fi
+done
