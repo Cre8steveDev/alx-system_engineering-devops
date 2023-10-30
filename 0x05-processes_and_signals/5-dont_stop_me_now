@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Kill a process the hard way
 
-id=$(pgrep -o '4-to_infinity_and_beyond')
-kill -15 "$id"
+kill "$(pgrep 4-to_infinity_and_beyond)"
