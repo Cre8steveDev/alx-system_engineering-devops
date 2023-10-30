@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Print the process id (pid) of the running script
+
+echo "$$"
