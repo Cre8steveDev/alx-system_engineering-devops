@@ -3,4 +3,3 @@
 
 id=$(pgrep -o '4-to_infinity_and_beyond')
 kill -15 "$id"
-echo "Terminated"
