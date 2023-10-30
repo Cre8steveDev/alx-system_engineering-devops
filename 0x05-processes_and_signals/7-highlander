@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Invisible to Sigterm
+# Invisible to Sigterm dunno
 
 while :
 do

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Kill a process with SIGKILL
+# Kill a process with SIGTERM
 
 pkill -15 -f 7-highlander
