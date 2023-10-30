@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Indefinitely appends "I am alive" to the file /tmp/my_process and auses 2 seconds in between each message.
+# Indefinitely appends "I am alive" to the file /tmp/my_process and auses 2 seconds in between each message.   .
 
 while :
 do

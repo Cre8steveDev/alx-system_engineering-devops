@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# manage a process, send it a
+# manage a process, send it to the background
 
 if [ "${1}" == "start" ]
 then
