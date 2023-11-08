@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Kill a process with SIGKILL CANNOT BE IGNORED
-
-pkill -9 -f 7-highlander
