@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Process ID using pgrep to find processes by name
-pgrep -l 'bash'

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# List all process in user-oriented format and show hierarchy
-
-ps auxf

@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Listing content of a file
-
-for file in *
-do
-	echo "$file" | cut --delim=- -f2
-done
