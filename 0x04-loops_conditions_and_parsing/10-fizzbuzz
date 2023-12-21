@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Running FizzBuzz
+
+idx=1
+
+while (( idx < 101 )); do
+	if (( idx % 3 == 0 )) && (( idx % 5 == 0 )); then
+		echo "FizzBuzz"
+	elif (( idx % 3 == 0 )); then 
+		echo "Fizz"
+	elif (( idx % 5 == 0 )); then 
+		echo "Buzz"
+	else
+		echo "$idx"
+	fi 
+
+	idx=$((idx + 1))
+done
