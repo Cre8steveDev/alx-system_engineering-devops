@@ -2,5 +2,5 @@
 # Printing files on the current directory without the file extension
 
 for file in *; do
-echo "$file" | cut -d "." -f 1
+echo "$file" | cut -d "-" -f 2
 done
