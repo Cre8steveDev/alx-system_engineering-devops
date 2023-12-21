@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 # Printing files on the current directory without the file extension
 
-for file in $(ls); do
-echo $file | cut -d "." -f 1
+for file in *; do
+echo "$file" | cut -d "." -f 1
 done
