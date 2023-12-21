@@ -1,0 +1,14 @@
+#!/usr/bin/env bash 
+# Using an if...elif...else conditional statement
+
+idx=1
+
+while ((idx < 11)); do
+if ((idx == 4)); then echo "bad luck"
+elif ((idx == 8)); then echo "good luck"
+else
+echo "Best School"
+fi
+
+idx=$((idx + 1))
+done
