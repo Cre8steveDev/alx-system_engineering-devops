@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Using the until command to run a looop
+
+idx=10
+
+until ((idx == 0))
+do echo "Best School"
+idx=$((idx - 1))
+done
