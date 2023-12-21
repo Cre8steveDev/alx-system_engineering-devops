@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Using the while loop to print 10 times
+
+idx=10
+
+while [[ $idx -gt 0 ]]
+do echo "Best School"
+idx=$((idx - 1))
+done
