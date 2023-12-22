@@ -1,0 +1,4 @@
+#!/usr/bin/env bash 
+# Getting the name of a process and its ID the easy way using pgrep and -l flag
+
+pgrep -l 'bash'
