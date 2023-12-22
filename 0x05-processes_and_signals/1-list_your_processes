@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # List all your proceses with the ps command and the -aux flag
 
-ps -aux
+ps aux
