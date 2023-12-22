@@ -2,5 +2,4 @@
 # Terminating another process using the kill command
 
 kill "$(pgrep 4-to_infinity_and_beyond)"
-echo "Terminated"
 
