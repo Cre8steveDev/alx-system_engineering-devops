@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# A Bash Script that transfers a file from our 
-# Client to a server - automation 
+# A Bash Script that transfers a file from our Client to a server - automation 
 
 
 if [ $# -lt 3 ]
