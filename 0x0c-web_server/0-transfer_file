@@ -14,7 +14,6 @@ USERNAME=$3
 PATH_TO_SSH_KEY=$4
 
 # Make the transfer of the file
-# scp -i $PATH_TO_SSH_KEY -o StrictHostKeyChecking=no "$USERNAME"@"$IP":~/"$USER"/
 scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME"@"$IP":~/
 
 fi;
