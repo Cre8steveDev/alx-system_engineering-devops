@@ -2,11 +2,11 @@
 # Script to install and configure HAproxy on a server
 
 #Enable dedicated PPA
-# apt-get -y install --no-install-recommends software-properties-common
-# add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get -y install --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
 
 # #Install with the following command 
-# apt-get -y install haproxy
+apt-get -y install haproxy
 
 #configure HAproxy. File path is at 
 # /etc/haproxy/haproxy.cfg
@@ -21,7 +21,7 @@ printf %s "global
     group haproxy
 
 defaults
-    log     global
+    log     globalservice haproxy start
     mode    http
     option  httplog
     option  dontlognull
