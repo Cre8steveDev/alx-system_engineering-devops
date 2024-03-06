@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# script that installs and configures a load balancer
+
+sudo apt-get update -y -qq && \
+			sudo apt-get install -y haproxy -qq
+
+
+# backup default server config file
+sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
+
+server_config=\
+"
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend cre8steve_front
+    bind *:80
+    default_backend cre8steve_back
+
+backend cre8steve_back
+    balance roundrobin
+    server 420448-web-01 52.91.146.238:80 check
+    server 420448-web-02 35.153.98.99:80 check
+"
+
+# shellcheck disable=SC2154
+echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+	sudo service haproxy start
+else
+	sudo service haproxy restart
+fi
