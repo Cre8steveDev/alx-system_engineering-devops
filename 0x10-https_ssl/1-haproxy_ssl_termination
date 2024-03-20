@@ -1,0 +1,37 @@
+global
+    user haproxy
+    group haproxy
+    maxconn 2048
+    tune.ssl.default-dh-param 2048
+    log 127.0.0.1 local0
+
+defaults
+    mode http
+    timeout client 15s
+    timeout connect 10s
+    timeout server 15s
+    timeout http-request 10s
+    log global
+    option httplog
+    retries 3
+    option redispatch
+    errorfile 400 /etc/haproxy/errors/400.http
+    errorfile 403 /etc/haproxy/errors/403.http
+    errorfile 500 /etc/haproxy/errors/500.http
+
+frontend cre8steve_front
+    bind *:80
+    bind *:443 ssl crt /etc/letsencrypt/live/www.cre8steve.tech/finalsslkey.pem
+    http-request add-header X-Forwarded-Proto https
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    #use_backend letsencrypt_bck if letsencrypt-acl
+    default_backend cre8steve_back
+
+backend cre8steve_back
+    balance roundrobin
+    redirect scheme https if !{ ssl_fc }
+    server 420448-web-01 52.91.146.238:80 check
+    server 420448-web-02 35.153.98.99:80 check
+
+
+
