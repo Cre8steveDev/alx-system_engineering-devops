@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     all_users_data = requests.get(f"{base_url}/users")
     all_users_data = all_users_data.json()
-    
+
     all_users_dict = {}
 
     for user in all_users_data:
