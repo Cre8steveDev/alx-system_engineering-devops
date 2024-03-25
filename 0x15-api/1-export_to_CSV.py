@@ -41,7 +41,7 @@ if __name__ == "__main__" and len(argv) > 1:
         todo_completed = todo.get("completed")
         todo_title = todo.get("title")
 
-        new_str = '"{}", "{}", "{}", "{}"\n'\
+        new_str = '"{}","{}","{}","{}"\n'\
             .format(user_id, user_name, todo_completed, todo_title)
 
         todo_details.append(new_str)
