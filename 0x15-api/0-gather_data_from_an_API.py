@@ -22,11 +22,11 @@ if __name__ == "__main__":
 
     num_of_tasks = len(todo_data)
     completed_tasks = len([cmpl for cmpl in todo_data
-                        if cmpl.get("completed")])
+                           if cmpl.get("completed")])
 
     # Print formatted output as on task
     print("Employee {} is done with tasks({}/{}):"
-        .format(user_data.get("name", ""), completed_tasks, num_of_tasks))
+          .format(user_data.get("name", ""), completed_tasks, num_of_tasks))
 
-    [print("\t {}".format(task["title"])) for task in todo_data
-    if task.get("completed")]
+    [print("\t {}".format(task["title"]))
+     for task in todo_data if task.get("completed")]
