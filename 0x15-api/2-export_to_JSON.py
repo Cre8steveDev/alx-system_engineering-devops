@@ -5,8 +5,7 @@
 employee ID, returns information about his/her
 TODO list progres
 """
-
-from http.client import HTTPResponse
+import json
 import requests
 from sys import argv
 
@@ -25,17 +24,15 @@ if __name__ == "__main__" and len(argv) > 1:
     todo_details = []
 
     for todo in todo_data:
-        user_id = user_data.get("id")
         user_name = user_data.get("username")
         todo_completed = todo.get("completed")
         todo_title = todo.get("title")
 
-        new_str = '"{}","{}","{}","{}"\n'\
-            .format(user_id, user_name, todo_completed, todo_title)
+        new_dict = {"task": todo_title, "completed": todo_completed,
+                    "username": user_name}
 
-        todo_details.append(new_str)
+        todo_details.append(new_dict)
 
     # Write composted todos in the array into a file
-    with open(f"{user_id}.csv", "w") as file:
-        for todo in todo_details:
-            file.write(todo)
+    with open(f"{USER_ID}.json", "w") as file:
+        file.write(json.dumps({f"{USER_ID}": todo_details}))
