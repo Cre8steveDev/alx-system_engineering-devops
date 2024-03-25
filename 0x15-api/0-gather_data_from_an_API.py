@@ -6,8 +6,8 @@ employee ID, returns information about his/her
 TODO list progres
 """
 
-import requests
 from http.client import HTTPResponse
+import requests
 from sys import argv
 
 USER_ID = argv[1]
