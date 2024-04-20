@@ -1,22 +1,13 @@
-file_line { 'nginx_worker_connections':
-  path  => '/etc/nginx/nginx.conf',
-  line  => 'worker_connections 4048;',
-  match => '^worker_connections',
+# Increases the amount of traffic an Nginx server can handle
+# Increase the ULIMIT of the default file
+# Then Restart Nginx to apply 
+
+exec { 'Execute_fix_for_nginx':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin'
 }
 
-file_line { 'nginx_multi_accept':
-  path  => '/etc/nginx/nginx.conf',
-  line  => 'multi_accept on;',
-  match => '^#multi_accept',
-}
-
-file_line { 'nginx_types_hash_max_size':
-  path  => '/etc/nginx/nginx.conf',
-  line  => 'types_hash_max_size 4048;',
-  match => '^types_hash_max_size',
-}
-
-exec { 'nginx-restart':
+exec { 'Restart_Nginx_To_apply_changes':
   command => 'nginx restart',
   path    => '/etc/init.d/'
 }
